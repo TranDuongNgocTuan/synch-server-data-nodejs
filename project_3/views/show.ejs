@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app.todos">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Node/Angular Todos</title>
+    <!-- Css bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Css home-->
+    <link rel="stylesheet" href="/assets/css/show.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery show-->
+    <script src="/assets/js/show.js"></script>
+    <!-- Font robot-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <a href="/register">
+                <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-plus"></i></button>
+            </a>
+        </div>
+        <div class="row col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">DANH SÁCH ĐĂNG KÝ TOUR</h3>
+                    <div class="pull-right">
+                        <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+							<i class="glyphicon glyphicon-filter"></i>
+						</span>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Họ Tên"
+                    />
+                </div>
+                <table class="table table-hover" id="dev-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Họ Tên</th>
+                            <th>Số Điện Thoại</th>
+                            <th>Tour</th>
+                            <th>Hãng Xe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% register.forEach(function(reg){ %>
+                            <tr>
+                                <td>
+                                    <%=reg.id %>
+                                </td>
+                                <td>
+                                    <%=reg.fullName %>
+                                </td>
+                                <td>
+                                    <%=reg.phone %>
+                                </td>
+                                <td>
+                                    <%=reg.nameTour %>
+                                </td>
+                                <td>
+                                    <%=reg.nameService %>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

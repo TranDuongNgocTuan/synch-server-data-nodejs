@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app.todos">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Node/Angular Todos</title>
+    <!-- Css bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Css home-->
+    <link rel="stylesheet" href="/assets/css/home.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Font robot-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row col-md-6 col-md-offset-3">
+            <form class="form-horizontal" action="/register" method="POST">
+                <h4 class="text-center">Đăng ký tours</h4>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="hoten">Ho tên:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="hoten" placeholder="Tran Van A" name="fullName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="sdt">SĐT:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="sdt" placeholder="+84164548565" name="phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="diachi">Địa chỉ:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="diachi" placeholder="Thành phố/Huyện/Thị xã" name="address">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="pwd">Tours:</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" id="sel1" name="tourID">
+                            <% tours.forEach(function(tour){ %>
+                                <option value='<%= tour.id %>'><%= tour.nameTour %></option>
+                            <% }); %>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="pwd">Hãng xe:</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" id="sel1" name="busID">
+                            <% buss.forEach(function(bus){ %>
+                                <option value='<%= bus.id %>'><%= bus.nameService %></option>
+                            <% }); %>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-10">
+                        <button type="submit" class="btn btn-success">Đăng Ký</button>
+                        <button type="reset" class="btn btn-default">Xóa</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
