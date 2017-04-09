@@ -11,12 +11,14 @@ module.exports = function (socket_list, other_socket) {
                 sql = data.sql;
                 sendData(data);
                 flag.changeFlagBlock();
-                console.log(data);
+                
             } else if (data.quantity == data.n) {
                 flag.changeFlagUnBlock();
                 model.insertRegister(data.sql, flag);
                 relayData(data);
             }
+
+            console.log(data);
         });
     })
 
@@ -25,7 +27,7 @@ module.exports = function (socket_list, other_socket) {
             relayData(data);
             flag.changeFlagUnBlock();
             model.insertRegister(sql, flag);
-        } 
+        }
     })
 
     function relayData(data) {

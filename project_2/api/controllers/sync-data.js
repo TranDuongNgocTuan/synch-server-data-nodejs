@@ -17,6 +17,7 @@ module.exports = function (socket_list, other_socket) {
                 model.insertRegister(data.sql, flag);
                 relayData(data);
             }
+
             console.log(data);
         });
     })
