@@ -1,4 +1,4 @@
-
+var model = require('../models/car-restaurent');
 var SerialPort = require('serialport');
 var portName = "/dev/ttyUSB0";
 
@@ -31,6 +31,7 @@ module.exports = function (app, io, socket, other_socket) {
         io.sockets.emit('message', data);
         other_socket.emit('message', {notify: data, postion: '1', content: 'error', quantity: 2, mess: "send", n: 3}); //send Server 2
         console.log(data);
+        model.changeStatusRestaurent(data);
     }
 
     function showPortClose() {

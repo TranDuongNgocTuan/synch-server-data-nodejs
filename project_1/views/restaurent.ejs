@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tutorial">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Node/Angular Todos</title>
+    <!-- Css bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Css home-->
+    <link rel="stylesheet" href="/assets/css/show.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery show-->
+    <script src="/assets/js/show.js"></script>
+    <!-- Font robot-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <!-- CSS notify -->
+    <link rel="stylesheet" href="/assets/angular-ui-notification.min.css">
+    <!-- Socket io-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+    <!-- Angular JS -->
+    <script src="/assets/angular.js"></script>
+    <!-- Javascript -->
+    <script src="/assets/angular-ui-notification.min.js"></script>
+    <script>
+        var app = angular.module('tutorial', ['ui-notification']);
+        var socket = io("http://localhost:5001");
+        var lastData = 0;
+        app.controller('notify', ['$scope', '$window', 'Notification',  function ($scope, window, Notification) {
+            socket.on('message', function(data){
+                if (data == 1){
+                    console.log(data);
+                    Notification.error('Nhà hàng Số 2 có vần đề !!!');
+                }
+            })            
+        }]);
+    </script>
+</head>
+
+<body>
+
+    <div class="container" ng-controller="notify">
+        <div class="row col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">DANH SÁCH NHÀ HÀNG</h3>
+                    <div class="pull-right">
+                        <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+							<i class="glyphicon glyphicon-filter"></i>
+						</span>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Họ Tên"
+                    />
+                </div>
+                <table class="table table-hover" id="dev-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Tên Nhà Hàng</th>
+                            <th>Địa Chỉ</th>
+                            <th>Số Điện Thoại</th>
+                            <th>Tình Trạng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% restaurent.forEach(function(res){ %>
+                            <tr>
+                                <td>
+                                    <%=res.id %>
+                                </td>
+                                <td>
+                                    <%=res.name %>
+                                </td>
+                                <td>
+                                    <%=res.address %>
+                                </td>
+                                <td>
+                                    <%=res.phone %>
+                                </td>
+                                <td>
+                                    <% if (res.status == 1) { %>
+                                        <span class="error">Sự Cố</span>
+                                    <% } else{ %>
+                                        <span class="normal">Ổn Định</span>
+                                    <% } %>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

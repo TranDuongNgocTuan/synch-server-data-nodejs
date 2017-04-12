@@ -13,7 +13,7 @@ var selectAll = function () {
 }
 
 var selectAllTourHoiAn = function (place, callback) {
-    connection.query("SELECT * FROM tour WHERE placeEnd = (SELECT id FROM place WHERE places ='"+place+"');", function (err, rows, fields) {
+    connection.query("SELECT * FROM tour WHERE placeEnd = (SELECT id FROM place WHERE places ='" + place + "');", function (err, rows, fields) {
         if (err) throw err;
         return callback(rows);
     });
@@ -27,9 +27,9 @@ var selectAllBus = function (callback) {
 }
 
 var insertRegister = function (sql, flag) {
-        connection.query(sql, function (err, rows, fields) {
-            if (err) throw err;
-        });
+    connection.query(sql, function (err, rows, fields) {
+        if (err) throw err;
+    });
 }
 
 var selectAllRegister = function (callback) {
@@ -43,8 +43,8 @@ var selectAllRegister = function (callback) {
         });
 }
 
-var selectTour = function(tourID, callback){
-    connection.query("Select * from tour WHERE id = '"+tourID+"'", function (err, rows, fields) {
+var selectTour = function (tourID, callback) {
+    connection.query("Select * from tour WHERE id = '" + tourID + "'", function (err, rows, fields) {
         if (err) throw err;
         return callback(rows);
     });
