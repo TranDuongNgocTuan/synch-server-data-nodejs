@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app.todos">
+<html lang="en" ng-app="tutorial">
 
 <head>
     <meta charset="UTF-8">
@@ -16,11 +16,32 @@
     <script src="/assets/js/show.js"></script>
     <!-- Font robot-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <!-- CSS notify -->
+    <link rel="stylesheet" href="/assets/angular-ui-notification.min.css">
+    <!-- Socket io-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+    <!-- Angular JS -->
+    <script src="/assets/angular.js"></script>
+    <!-- Javascript -->
+    <script src="/assets/angular-ui-notification.min.js"></script>
+    <script>
+        var app = angular.module('tutorial', ['ui-notification']);
+        var socket = io("http://localhost:5001");
+        var lastData = 0;
+        app.controller('notify', ['$scope', '$window', 'Notification',  function ($scope, window, Notification) {
+            socket.on('message', function(data){
+                if (data == 1){
+                    console.log(data);
+                    Notification.error('Nhà hàng Số 2 có vần đề !!!');
+                }
+            })            
+        }]);
+    </script>
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="container" ng-controller="notify">
         <div class="row">
             <a href="/register">
                 <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-plus"></i></button>

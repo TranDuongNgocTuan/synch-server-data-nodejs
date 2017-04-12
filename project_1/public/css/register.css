@@ -1,0 +1,336 @@
+/** {padding: 0px; margin: 0px}*/
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+nav.navbar.navbar-default {
+    margin-bottom: 0px;
+    background-color: white;
+    border: none;
+    padding: 10px;
+}
+
+.header_first li:hover {
+    background-color: #13a1c5;
+}
+
+.navbar-default .navbar-nav>li>a.ctg {
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #272727;
+}
+
+.header_first .navbar-default .navbar-nav>li:hover>a.ctg{
+    color: white
+}
+
+.header_first {
+    padding-top: 6px;
+    padding-bottom: 5px;
+    box-shadow: 1px 0px 10px black;
+}
+
+.header_first .navbar-brand {
+    position: relative;
+    top: -9px;
+}
+
+.carousel-inner{
+  width:100%;
+  max-height: 550px !important;
+}
+
+.header_first .carousel-inner .item img {
+    width: 100%;
+}
+
+.carousel-control {
+    width: 4% !important;
+}
+
+.row.title {
+    border-bottom: 3px solid #0a7894;
+}
+
+.row.title h3 {
+    text-transform: uppercase;
+    color: #003c71;
+    font-weight: 600;
+}
+
+.row.title {
+  margin-bottom: 30px;
+}
+
+.ribbon {
+    /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+    width: 50%;
+    position: absolute;
+    background: #d82a2a;
+    color: #fff;
+    text-align: center;
+    padding: 5px; /* Adjust to suit */
+    /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+    top: 19px;
+    left: 1px;
+}
+.ribbon .ribbon-content:before {
+    content: "";
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-color: #880c0c transparent;
+    bottom: -1em;
+}
+.ribbon .ribbon-content:before {
+    left: 0;
+    border-width: 1em 0 0 1em;
+}
+
+.item_info h4 {color: #13a1c5;font-weight: 600;height: 41px;margin-bottom: 22px;}
+
+.item_info span.time_travel {
+    margin-left: 16px;
+}
+
+.item_info span.from {
+    margin-left: 20px;
+}
+
+.item_info .time_start {
+    font-size: 13px;
+    color: #565454;
+}
+
+.place_start {
+    margin-bottom: 19px;
+    color: #34adcc;
+}
+
+.item_info {
+    height: 225px;
+    border: 1px solid rgba(222, 222, 222, 0.85);
+    border-top: none;
+}
+
+span.money {
+    background-color: #15a2c5;
+    color: white;
+    padding: 11px 9px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.item_info hr {
+    margin-bottom: 26px;
+}
+
+.col-xs-4.col-sm-4.col-md-4.col-lg-4.col-md-offset-3.start {
+    color: #ff6600;
+}
+
+.row.row_up_item {
+    margin-bottom: 20px;
+}
+
+.content_first {
+    padding-top: 20px;
+}
+
+.row.row_up_items {
+    margin-bottom: 28px;
+}
+
+.row_up_items .col-md-4:hover .item_wrapp {
+    box-shadow: 1px 1px 6px #e4e4e4;
+}
+
+#footer .navbar-brand {
+    float: none;
+    font-weight: 800;
+    color: white;
+}
+
+footer#footer {
+    padding-top: 42px;
+    /* padding-bottom: 42px; */
+    background: #3a3f3b;
+    color: white;
+    margin-top: 4%;
+}
+
+p#about {
+    margin-top: 31px;
+}
+
+.contact p:first-child {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.contact p:last-child {
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+span.scoial {
+    margin-right: 16px;
+}
+
+span.scoial i {
+    margin-right: 8px;
+}
+
+.col-xs-12.col-sm-12.col-md-12.col-lg-12.items_info_footer a {
+    float: left;
+    margin-right: 12px;
+}
+
+span.info_date {
+    font-size: 10px;
+}
+
+.col-xs-12.col-sm-12.col-md-12.col-lg-12.items_info_footer {
+    padding: 11px 0px;
+}
+
+.col-xs-12.col-sm-12.col-md-12.col-lg-12.items_info_footer div span.tag_info {
+    background-color: #278958;
+    border-radius: 3px;
+    font-size: 11px;
+    padding: 3px;
+    color: white;
+    font-weight: 800;
+}
+
+form#quickContact input, form#quickContact textarea {
+    margin-bottom: 10px;
+    background: #777a78;
+    border: 1px solid #383d39;
+    border-radius: 0px;
+}
+
+#quickContact button.btn.btn-primary {
+    width: 100%;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding: 8px;
+}
+
+ul.footer_info li b {
+    font-size: 18px;
+}
+
+ul.footer_info li {
+    list-style-type: none;
+}
+
+ul.footer_info li:first-child {
+    margin-bottom: 10px;
+}
+
+.footer_last {
+    background: #2d2d2d none repeat scroll 0 0;
+    padding-top: 22px;
+    padding-bottom: 38px;
+}
+
+.footer_last p {
+    margin-bottom: 0px;
+}
+
+.footer_first {
+    padding-bottom: 28px;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #eaeaea !important;
+    background-color: #2b8096 !important;
+}
+
+ul.dropdown-menu form {
+    padding: 17px;
+    width: 295px;
+}
+
+.dropdown-menu button.btn.btn-danger {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+ul.dropdown-menu form {
+    padding: 17px;
+    width: 295px;
+}
+
+h4#login {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: #34adcc;
+    color: white;
+    padding: 16px;
+    margin-top: 21px;
+}
+
+.dropdown-menu input.btn.btn-danger {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+button.btn.login, a.btn.register {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #34adcc;
+    border-color: #1f8eab;
+}
+
+.form_pay {
+    margin-top: 61px;
+}
+
+.pay_wrapp {
+    background-color: #f9f9f9;
+    height: 367px;
+    padding-top: 29px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+i.glyphicon.glyphicon-asterisk.vcolor-danger {
+    font-size: 8px;
+    color: red;
+}
+
+.button_pay {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.button_pay i.fa.fa-check {
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+button.btn.btn-primary.button_pay {
+    font-size: 15px;
+    font-weight: 700;
+    background-color: #13a1c5;
+    border-color: #20aed2;
+}
+
+.form_pay h3 {
+    font-weight: 600;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #15a2c5;
+}
+
+textarea#notes {
+    margin-top: 10px;
+}

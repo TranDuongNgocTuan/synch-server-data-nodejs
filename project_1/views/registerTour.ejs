@@ -15,7 +15,7 @@
     <!-- Font awsome-->
     <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
     <!-- Css home-->
-    <link rel="stylesheet" href="/assets/css/search.css">
+    <link rel="stylesheet" href="/assets/css/register.css">
     <!-- Css bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
@@ -74,88 +74,100 @@
             </div>
         </div>
     </div>
-    <div class="header_second">
-        <div id="carousel-id" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-id" data-slide-to="0" class=""></li>
-                <li data-target="#carousel-id" data-slide-to="1" class=""></li>
-                <li data-target="#carousel-id" data-slide-to="2" class="active"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item">
-                    <img alt="First slide" src="/assets/img/Hoi-An.jpg">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Example headline.</h1>
-                            <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon
-                                buttons on the left and right might not load/display properly due to web browser security
-                                rules.
-                            </p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img alt="Second slide" src="/assets/img/dao-cu-lao-cham-ivivu-1.jpg" width="100%">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Another example headline.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
-                                at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item active">
-                    <img alt="Third slide" src="/assets/img/DSC_3202.jpg">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>One more for good measure.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
-                                at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-            <a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div>
-    </div>
-    <div class="content_first">
+    <div class="form_pay">
         <div class="container">
-            <div class="row title">
-                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                    <h3>Các tour đi Hội An</h3>
-                </div>
+            <div class="row">
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <h3 class="">Thanh Toán</h3>
+                    <form action="/register" method="POST">
+                        <div class="pay_wrapp">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label">Họ &amp; Tên <sup><i class="glyphicon glyphicon-asterisk vcolor-danger"></i></sup></label>
+                                    <input id="customerName" name="fullname" type="text" class="form-control" maxlength="200" value="">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label">Điện thoại <sup><i class="glyphicon glyphicon-asterisk vcolor-danger"></i></sup></label>
+                                    <input id="customerPhone" name="phone" type="text" class="form-control" maxlength="200" value="">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label">Address <sup><i class="glyphicon glyphicon-asterisk vcolor-danger"></i></sup></label>
+                                    <input id="customerEmail" name="address" type="text" class="form-control" maxlength="200" value="">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label">Hãng xe <sup><i class="glyphicon glyphicon-asterisk vcolor-danger"></i></sup></label>
+                                    <select class="form-control" id="" name="busID">
+                                    <% buss.forEach(function(bus){ %>
+                                        <option value='<%= bus.id %>'><%= bus.nameService %></option>
+                                    <% }); %>
+                            </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label">Số người lớn <sup><i class="glyphicon glyphicon-asterisk vcolor-danger"></i></sup></label>
+                                    <select class="form-control" id="" name="numberAdult">
+                                    <option value="1">1 Khách</option>
+                                    <option value="2">2 Khách</option>
+                                    <option value="3">3 Khách</option>
+                                    <option value="4">4 Khách</option>
+                            </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label">Số trẻ em <15 tuổi <sup><i class="glyphicon glyphicon-asterisk vcolor-danger"></i></sup></label>
+                                    <select class="form-control" id="" name="numberAdult">
+                                        <option value="0">0 Có trẻ em</option>
+                                        <option value="1">1 Em</option>
+                                        <option value="2">2 Em</option>
+                                        <option value="3">3 Em</option>
+                                        <option value="4">4 Em</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <textarea class="form-control" id="notes" name="notes" cols="30" rows="3" placeholder="Yêu cầu khác ..."></textarea>
+                            </div>
 
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                    <div style="margin-top: 20px; margin-bottom: 10px;">Xem tiếp <i class="fa fa-arrow-circle-o-right"></i></div>
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary button_pay">HOÀN TẤT ĐĂNG KÝ <i class="fa fa-check"></i></button>
+                            </div>
+
+                            <input type="hidden" value="<%=tourID %>" name="tourID"/>
+                        </div>
+                    </form>
                 </div>
-            </div>
-            <div class="row row_up_items">
-                <% tours.forEach(function(tour){ %>
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                     <div class="item_wrapp">
                         <div class="img_item">
                             <div class="ribbon">
                                 <strong class="ribbon-content">Giảm giá sock</strong>
                             </div>
-                            <img src="/assets/img/<%=tour.picture %>" alt="" class="img-responsive" style="height: 202px; width: 100%;
-">
+                            <img src="/assets/img<%=tourBook.picture %>" alt="" class="img-responsive" style="height: 202px; width: 100%;">
                         </div>
                         <div class="item_info">
 
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <a href="register/<%=tour.id %>"><h4><%=tour.nameTour %></h4></a>
+                                <a href="<%=tourBook.id %>">
+                                    <h4>
+                                        <%=tourBook.nameTour %>
+                                    </h4>
+                                </a>
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 place_start">
-                                <i class="fa fa-map-marker"></i><span class="from"><%=tour.departure %></span>
+                                <i class="fa fa-map-marker"></i><span class="from"><%=tourBook.departure %></span>
                             </div>
 
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 time_start">
-                                <i class="fa fa-clock-o"></i><span class="time_travel"><%=tour.distanceDay %></span>
+                                <i class="fa fa-clock-o"></i><span class="time_travel"><%=tourBook.distanceDay %></span>
                             </div>
 
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
@@ -167,7 +179,7 @@
                             </div>
 
                             <div class="col-md-5 money">
-                                <span class="money"><%=tour.money %>VNĐ</span>
+                                <span class="money"><%=tourBook.money %>VNĐ</span>
                             </div>
 
                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-md-offset-3 start">
@@ -181,9 +193,7 @@
                         </div>
                     </div>
                 </div>
-                <% }); %>
             </div>
-
         </div>
     </div>
     <footer id="footer">

@@ -20,11 +20,13 @@ module.exports = function (app, socket) {
         var address = req.body.address;
         var tourID = req.body.tourID;
         var busID = req.body.busID;
-        sql = "INSERT INTO register(fullName, phone, address, tourID, busID) VALUES('" + fullName + "','" + phone + "','" + address + "','" + tourID + "','" + busID + "')";
+        var numberAdult = req.body.numberAdult;
+        var numberChild = req.body.numberChild;
+        sql = "INSERT INTO `tours`.`register` (`fullName`, `phone`, `address`, `tourID`, `busID`, `numberAdult`, `numberChild`) VALUES ('" + fullName + "','" + phone + "','" + address + "','" + tourID + "','" + busID + "','" + numberAdult + "','" + numberChild + "')";
 
         checkFlag(sql);
 
-        res.redirect('/show');
+        res.redirect('/notify-register');
     });
 
     socket.on("relay", function (data) {
@@ -44,16 +46,16 @@ module.exports = function (app, socket) {
                     sendData(sql);
                     clearInterval(interVal);
                 }
-            },100);
-            setTimeout(function(){
+            }, 100);
+            setTimeout(function () {
                 clearInterval(interVal);
-            },600)
+            }, 600)
         }
     }
 
     // send data when flag block no
     function sendData(sql) {
         flag.changeFlagBlock(); //block data
-        socket.emit("message", { sql: sql, quantity: 2, mess: "send", n: 3, datatime: datetime });
+        socket.emit("message", { sql: sql, quantity: 2, mess: "send", n: 3 });
     }
 }
