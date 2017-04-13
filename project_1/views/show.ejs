@@ -30,11 +30,9 @@
         var lastData = 0;
         app.controller('notify', ['$scope', '$window', 'Notification',  function ($scope, window, Notification) {
             socket.on('message', function(data){
-                if (data.notify == 1){
-                    console.log(data.data);
+                if (data == 1){
+                    console.log(data);
                     Notification.error('Nhà hàng Số 2 có vần đề !!!');
-                }else if (data.notify == 2){
-                    Notification.error('Xe Số 1 có vần đề !!!');
                 }
             })            
         }]);

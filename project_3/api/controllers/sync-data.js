@@ -1,9 +1,9 @@
 var model = require('../models/tours');
 var flag = require('../../config/block-server');
 
-module.exports = function (socket_list, other_socket) {
+module.exports = function (io, socket_this, other_socket) {
     var sql = "";
-    socket_list.sockets.on('connection', function (socket) {
+    socket_this.sockets.on('connection', function (socket) {
         console.log("Connect server 2");
 
         socket.on("message", function (data) {
@@ -16,6 +16,7 @@ module.exports = function (socket_list, other_socket) {
                 } else if (data.quantity == data.n) {
                     flag.changeFlagUnBlock();
                     relayNotify(data);
+                    io.sockets.emit('message', data.notify);
                 }
             }
             else if (data.notify != 0){

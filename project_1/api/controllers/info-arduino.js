@@ -36,7 +36,7 @@ module.exports = function (app, io, socket, other_socket) {
     }
 
     function sendSerialData(data) {
-        io.sockets.emit('message', {notify: 1, data: data});
+        io.sockets.emit('message', data);
         other_socket.emit('message', {notify: data, postion: '1', content: 'error', quantity: 2, mess: "send", n: 3}); //send Server 2
         console.log(data);
         model.changeStatusRestaurent(data);

@@ -14,6 +14,16 @@ module.exports = function (app, socket) {
         })
     });
 
+    app.get("/register/:tourID", function (req, res) {
+        var tourID = req.params.tourID;
+
+        model.selectAllBus(function (rowsBus) {
+            model.selectTour(tourID, function (tourBook){
+                res.render('registerTour', {buss: rowsBus, tourID: tourID, tourBook: tourBook[0] });
+            })
+        })
+    });
+
     app.post('/register', function (req, res) {
         var fullName = req.body.fullName;
         var phone = req.body.phone;
@@ -29,8 +39,25 @@ module.exports = function (app, socket) {
         res.redirect('/notify-register');
     });
 
+    app.post('/register/customer', function (req, res) {
+        var fullName = req.body.fullname;
+        var phone = req.body.phone;
+        var address = req.body.address;
+        var tourID = req.body.tourID;
+        var busID = req.body.busID;
+        var numberAdult = req.body.numberAdult;
+        var numberChild = req.body.numberChild;
+        sql = "INSERT INTO `tours`.`register` (`fullName`, `phone`, `address`, `tourID`, `busID`, `numberAdult`, `numberChild`) VALUES ('" + fullName + "','" + phone + "','" + address + "','" + tourID + "','" + busID + "','" + numberAdult + "','" + numberChild + "')";
+
+        checkFlag(sql);
+
+        res.redirect('/show');
+    });
+
     socket.on("relay", function (data) {
-        if (data.quantity == 1) {
+        if (data.notify == 1){
+             console.log(data);
+        }else if (data.quantity == 1) {
             flag.changeFlagUnBlock();
             model.insertRegister(sql, flag);
             console.log(data);

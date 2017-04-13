@@ -50,11 +50,19 @@ var selectTour = function (tourID, callback) {
     });
 }
 
+var selectAllTour = function(callback){
+    connection.query("Select * from tour", function (err, rows, fields) {
+        if (err) throw err;
+        return callback(rows);
+    });
+}
+
 module.exports = {
     selectAll: selectAll,
     selectAllTourHoiAn: selectAllTourHoiAn,
     selectAllBus: selectAllBus,
     selectTour: selectTour,
+    selectAllTour: selectAllTour,
     insertRegister: insertRegister,
     selectAllRegister: selectAllRegister
 }

@@ -17,6 +17,7 @@ module.exports = function (io, socket_this, other_socket) {
                 } else if (data.quantity == data.n) {
                     flag.changeFlagUnBlock();
                     relayNotify(data);
+                    io.sockets.emit('message', data.notify);
                 }
             }
             else if (data.notify != 0){

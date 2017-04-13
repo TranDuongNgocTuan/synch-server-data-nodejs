@@ -17,6 +17,8 @@ var registerController = require("./api/controllers/register-controller");
 var showController = require('./api/controllers/show-register');
 var syncData = require('./api/controllers/sync-data.js');
 var infoArduino = require('./api/controllers/info-arduino');
+var carRestaurentController = require('./api/controllers/car-restaurent');
+var homeController = require('./api/controllers/home-search-controller');
 
 var app = express();
 var port = process.env.PORT || 2000;
@@ -32,7 +34,9 @@ app.set("view engine", "ejs");
 
 // app.locals.flag = flag;
 
+app.use(homeController);
 app.use(loginController);
+app.use(carRestaurentController);
 registerController(app, other_socket);
 showController(app);
 syncData(io, socket, other_socket);

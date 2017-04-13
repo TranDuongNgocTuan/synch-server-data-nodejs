@@ -1,8 +1,9 @@
-
+var model = require('../models/car-restaurent');
 var SerialPort = require('serialport');
 var portName = "/dev/ttyACM0";
+var portNameCar = "/dev/ttyUSB0";
 
-module.exports = function (app, io) {
+module.exports = function (app, io, socket, other_socket) {
 
     io.sockets.on('connection', function (socket) {
         console.log('Connect arduino');
@@ -25,8 +26,10 @@ module.exports = function (app, io) {
     }
 
     function sendSerialData(data) {
-        io.sockets.emit('message', data);
+        io.sockets.emit('message', {notify: 1, data: data});
+        other_socket.emit('message', {notify: data, postion: '1', content: 'error', quantity: 2, mess: "send", n: 3}); //send Server 2
         console.log(data);
+        model.changeStatusRestaurent(data);
     }
 
     function showPortClose() {

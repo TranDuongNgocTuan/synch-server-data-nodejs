@@ -19,12 +19,12 @@
 <body>
     <div class="container">
         <div class="row col-md-6 col-md-offset-3">
-            <form class="form-horizontal" action="/register" method="POST">
+            <form class="form-horizontal" action="/register/customer" method="POST">
                 <h4 class="text-center">Đăng ký tours</h4>
                 <div class="form-group">
                     <label class="control-label col-sm-3" for="hoten">Ho tên:</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="hoten" placeholder="Tran Van A" name="fullName">
+                        <input type="text" class="form-control" id="hoten" placeholder="Tran Van A" name="fullname">
                     </div>
                 </div>
                 <div class="form-group">
@@ -59,6 +59,30 @@
                         </select>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="pwd">Hãng xe:</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" id="" name="numberAdult">
+                                    <option value="1">1 Khách</option>
+                                    <option value="2">2 Khách</option>
+                                    <option value="3">3 Khách</option>
+                                    <option value="4">4 Khách</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3" for="pwd">Hãng xe:</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" id="" name="numberAdult">
+                                        <option value="0">0 Có trẻ em</option>
+                                        <option value="1">1 Em</option>
+                                        <option value="2">2 Em</option>
+                                        <option value="3">3 Em</option>
+                                        <option value="4">4 Em</option>
+                                    </select>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-10">
                         <button type="submit" class="btn btn-success">Đăng Ký</button>
