@@ -30,7 +30,7 @@
         var lastData = 0;
         app.controller('notify', ['$scope', '$window', 'Notification',  function ($scope, window, Notification) {
             socket.on('message', function(data){
-                if (data.notify == 1){
+               if (data.notify == 1){
                     console.log(data.data);
                     Notification.error('Nhà hàng Số 2 có vần đề !!!');
                 }else if (data.notify == 2){
@@ -44,7 +44,7 @@
 <body>
 
     <div class="container" ng-controller="notify">
-        <div class="row col-md-12">
+        <div class="row col-md-6 col-md-offset-3">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">DANH SÁCH NHÀ HÀNG</h3>
@@ -62,29 +62,21 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Tên Nhà Hàng</th>
-                            <th>Địa Chỉ</th>
-                            <th>Số Điện Thoại</th>
+                            <th>Biển Số</th>
                             <th>Tình Trạng</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% restaurent.forEach(function(res){ %>
+                        <% cars.forEach(function(car){ %>
                             <tr>
                                 <td>
-                                    <%=res.id %>
+                                    <%=car.ID %>
                                 </td>
                                 <td>
-                                    <%=res.name %>
+                                    <%=car.numberCar %>
                                 </td>
                                 <td>
-                                    <%=res.address %>
-                                </td>
-                                <td>
-                                    <%=res.phone %>
-                                </td>
-                                <td>
-                                    <% if (res.status == 1) { %>
+                                    <% if (car.status == 1) { %>
                                         <span class="error">Sự Cố</span>
                                     <% } else{ %>
                                         <span class="normal">Ổn Định</span>

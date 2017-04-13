@@ -1,6 +1,6 @@
 
 var SerialPort = require('serialport');
-var portName = "/dev/ttyUSB0";
+var portName = "/dev/ttyACM0";
 
 module.exports = function (app, io) {
 

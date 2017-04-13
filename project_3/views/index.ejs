@@ -4,39 +4,245 @@
 <head>
     <meta charset="UTF-8">
     <title>Node/Angular Todos</title>
-    <!-- Css bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Css home-->
-    <link rel="stylesheet" href="/assets/css/home.css">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Font robot-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!-- Font Spirax-->
+    <link href="https://fonts.googleapis.com/css?family=Spirax" rel="stylesheet">
+    <!-- Font awsome-->
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Css home-->
+    <link rel="stylesheet" href="/assets/css/search.css">
+    <!-- Css bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
+    <div class="header_first">
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-default" role="navigation">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                        <a class="navbar-brand" href="#"><img src="/assets/img/logodivui.png" alt=""></a>
+                    </div>
 
-    <div class="container">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a class="ctg" href="#">TOUR</a></li>
+                            <!--<li><a href="#">Link</a></li>-->
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a class="ctg" href="#">Đăng Ký</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle ctg" data-toggle="dropdown">Đăng Nhập</a>
+                                <ul class="dropdown-menu">
 
-        <div class="row">
-            <form action="/login" method="POST" class="col-md-4 col-md-offset-4">
-                <h4 class="text-center">Đăng nhập vào hệ thống</h4>
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" class="form-control" id="username" name="username">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" name="password">
-                </div>
-                <button type="submit" class="btn btn-success">Đăng Nhập</button>
-            </form>
+                                    <h4 id="login">Đăng Nhập</h4>
+                                    <form action="/login" method="post">
+
+                                        <div class="form-group">
+                                            <label for="email">Tên đăng nhập:</label>
+                                            <input type="text" class="form-control" id="username" name="username">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pwd">Password:</label>
+                                            <input type="password" class="form-control" id="password" name="password">
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox"> Lưu lại tài khoản</label>
+                                        </div>
+                                        <button type="submit" Class="btn btn-primary login" name="submit" value="submit">Đăng Nhập</button>
+                                        <!--<a href="/dangKy" Class="btn btn-danger register">Đăng Ký</a>-->
+                                    </form>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+            </div>
         </div>
-
     </div>
+    <div class="header_second">
+        <div id="carousel-id" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-id" data-slide-to="0" class=""></li>
+                <li data-target="#carousel-id" data-slide-to="1" class=""></li>
+                <li data-target="#carousel-id" data-slide-to="2" class="active"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item">
+                    <img alt="First slide" src="/assets/img/Hoi-An.jpg">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Example headline.</h1>
+                            <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon
+                                buttons on the left and right might not load/display properly due to web browser security
+                                rules.
+                            </p>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img alt="Second slide" src="/assets/img/dao-cu-lao-cham-ivivu-1.jpg" width="100%">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Another example headline.</h1>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                                at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item active">
+                    <img alt="Third slide" src="/assets/img/DSC_3202.jpg">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>One more for good measure.</h1>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                                at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+            <a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
+    </div>
+    <div class="content_first">
+        <div class="container">
+            <div class="row title">
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                    <h3>Các tour đi Hội An</h3>
+                </div>
 
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <div style="margin-top: 20px; margin-bottom: 10px;">Xem tiếp <i class="fa fa-arrow-circle-o-right"></i></div>
+                </div>
+            </div>
+            <div class="row row_up_items">
+                <% tours.forEach(function(tour){ %>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="item_wrapp">
+                        <div class="img_item">
+                            <div class="ribbon">
+                                <strong class="ribbon-content">Giảm giá sock</strong>
+                            </div>
+                            <img src="/assets/img/<%=tour.picture %>" alt="" class="img-responsive" style="height: 202px; width: 100%;
+">
+                        </div>
+                        <div class="item_info">
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <a href="register/<%=tour.id %>"><h4><%=tour.nameTour %></h4></a>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 place_start">
+                                <i class="fa fa-map-marker"></i><span class="from"><%=tour.departure %></span>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 time_start">
+                                <i class="fa fa-clock-o"></i><span class="time_travel"><%=tour.distanceDay %></span>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
+                                <i class="fa fa-bus"></i>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <hr/>
+                            </div>
+
+                            <div class="col-md-5 money">
+                                <span class="money"><%=tour.money %>VNĐ</span>
+                            </div>
+
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-md-offset-3 start">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="footer_first">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                        <div class="col-md-4">
+                            <ul class="footer_info">
+                                <li><b>Về diVui</b></li>
+                                <li>Chúng tôi</li>
+                                <li>Thông Tin Cần Biết</li>
+                                <li>Lời Cảm Ơn</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-4">
+                            <ul class="footer_info">
+                                <li><b>Thông Tin Cần Biết</b></li>
+                                <li>Điều kiện & Điều khoản</li>
+                                <li>Quy chế hoạt động</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-4">
+                            <ul class="footer_info">
+                                <li><b>Đối Tác & Liên kết</b></li>
+                                <li>Vietnam Airlines</li>
+                                <li> VNExpress</li>
+                                <li>Tiki.vn - Mua sắm online</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-12" style=" margin-top: 20px; margin-left: 45px;">
+                            <p>diVui © 2017 - Hệ thống đặt phòng khách sạn & tours trực tuyến hàng đầu Việt Nam</p>
+                            <p><i class="fa fa-map-marker"></i> Tam Ky: Đại học Quảng Nam </p>
+                            <p><i class="fa fa-map-marker"></i> Đà Nẵng: FPT</p>
+                            <p><i class="fa fa-mail"></i> tour@ivivu.com</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h4>QUICK CONTACT</h4>
+                        <p>Góp ý nhan với chúng tôi</p>
+                        <form id="quickContact">
+                            <input type="" name="" class="form-control">
+                            <textarea class="form-control" rows="5"></textarea>
+                            <button type="button" class="btn btn-primary">Gửi Tin</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_last">
+            <div class="col-md-12 col-sm-12">
+                <p>Copyright 2016 © <a href="#"> Inwavethemes</a>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
