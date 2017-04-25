@@ -132,6 +132,18 @@
                                     </select>
                                 </div>
                             </div>
+
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <div class="form-group has-feedback">
+                                    <label class="control-label">Nhà hàng</label>
+                                    <select class="form-control" id="" name="nhaHang">
+                                    <% restaurent.forEach(function(res){ %>
+                                        <option value='<%= res.id %>'><%= res.name %></option>
+                                    <% }); %>
+                                    </select>
+                                </div>
+                            </div>
+
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <textarea class="form-control" id="notes" name="notes" cols="30" rows="3" placeholder="Yêu cầu khác ..."></textarea>
                             </div>
@@ -237,7 +249,7 @@
 
                     <div class="col-md-3">
                         <h4>QUICK CONTACT</h4>
-                        <p>Góp ý nhan với chúng tôi</p>
+                        <p>Góp ý nhanh với chúng tôi</p>
                         <form id="quickContact">
                             <input type="" name="" class="form-control">
                             <textarea class="form-control" rows="5"></textarea>

@@ -4,7 +4,9 @@ var model = require('../models/tours');
 
 router.get("/", function (req, res) {
     model.selectAllTourHoiAn("Hội An", function (rowsTours) {
-        res.render('index', { tours: rowsTours });
+        model.selectAllTour(function (rowAll){
+             res.render('index', { tours: rowsTours, tourAll: rowAll});
+        })
     })
 });
 

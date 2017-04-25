@@ -19,7 +19,7 @@ module.exports = function (io, socket_this, other_socket) {
                     io.sockets.emit('message', data.notify);
                 }
             }
-            else if (data.notify != 0){
+            else if (data.notify != 0) {
                 if (data.quantity < data.n && data.mess == "send") {
                     sql = data.sql;
                     sendData(data);
@@ -34,11 +34,14 @@ module.exports = function (io, socket_this, other_socket) {
             console.log(data);
         });
 
+        socket.on('disconnect', function () {
+            console.log("Disconnect server 2");
+        });
     })
 
     other_socket.on("relay", function (data) {
         if (data.notify == 1) {
-            if (data.quantity > 1 && data.mess == "success"){
+            if (data.quantity > 1 && data.mess == "success") {
                 relayNotify(data);
                 flag.changeFlagUnBlock();
             }
@@ -48,6 +51,10 @@ module.exports = function (io, socket_this, other_socket) {
             model.insertRegister(sql, flag);
         }
     })
+
+    other_socket.on('disconnect', function () {
+        console.log("Disconnect server 1");
+    });
 
     function relayData(data) {
         --data.quantity;

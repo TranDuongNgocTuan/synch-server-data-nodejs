@@ -57,12 +57,26 @@ var selectAllTour = function(callback){
     });
 }
 
+var selectRestaurentInTour = function(tourID, callback){
+    connection.query("SELECT restaurent.id, restaurent.name " +
+                     "from tour inner join tour_restaurent " +
+                     "on tour.id = tour_restaurent.tourID " +
+                     "inner join restaurent " +
+                     "on restaurent.id = tour_restaurent.restaurentID " + 
+                     "where restaurent.status != 1 " +
+                     "and tour.id ='"+tourID+"'", function (err, rows, fields) {
+        if (err) throw err;
+        return callback(rows);
+    });
+}
+
 module.exports = {
     selectAll: selectAll,
     selectAllTourHoiAn: selectAllTourHoiAn,
     selectAllBus: selectAllBus,
     selectTour: selectTour,
     selectAllTour: selectAllTour,
+    selectRestaurentInTour: selectRestaurentInTour,
     insertRegister: insertRegister,
     selectAllRegister: selectAllRegister
 }

@@ -297,3 +297,5 @@ button.btn.login, a.btn.register {
 .item_info a:hover h4 {
     color: #0d819e;
 }
+
+.item_wrapp {margin-bottom: 26px;}

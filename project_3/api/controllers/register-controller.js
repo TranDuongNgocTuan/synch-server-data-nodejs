@@ -25,7 +25,7 @@ module.exports = function (app, socket) {
     });
 
     app.post('/register', function (req, res) {
-        var fullName = req.body.fullName;
+        var fullName = req.body.fullname;
         var phone = req.body.phone;
         var address = req.body.address;
         var tourID = req.body.tourID;
@@ -36,7 +36,7 @@ module.exports = function (app, socket) {
 
         checkFlag(sql);
 
-        res.redirect('/notify-register');
+        res.render('notify-register');
     });
 
     app.post('/register/customer', function (req, res) {

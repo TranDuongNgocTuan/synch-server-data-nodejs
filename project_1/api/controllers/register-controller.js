@@ -19,7 +19,9 @@ module.exports = function (app, socket) {
 
         model.selectAllBus(function (rowsBus) {
             model.selectTour(tourID, function (tourBook){
-                res.render('registerTour', {buss: rowsBus, tourID: tourID, tourBook: tourBook[0] });
+                model.selectRestaurentInTour(tourID, function(rowRestaurent){
+                    res.render('registerTour', {buss: rowsBus, tourID: tourID, tourBook: tourBook[0], restaurent: rowRestaurent });
+                })
             })
         })
     });

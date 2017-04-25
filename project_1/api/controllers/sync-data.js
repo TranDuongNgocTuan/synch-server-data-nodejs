@@ -35,6 +35,9 @@ module.exports = function (io, socket_this, other_socket) {
             console.log(data);
         });
 
+        socket.on('disconnect', function(){
+            console.log("Disconnect server 3");
+        });
     })
 
     other_socket.on("relay", function (data) {
@@ -48,7 +51,11 @@ module.exports = function (io, socket_this, other_socket) {
             flag.changeFlagUnBlock();
             model.insertRegister(sql, flag);
         }
-    })
+    });
+
+    other_socket.on('disconnect', function(){
+        console.log("Disconnect server 2");
+    });
 
     function relayData(data) {
         --data.quantity;

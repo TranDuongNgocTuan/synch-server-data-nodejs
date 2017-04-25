@@ -25,7 +25,7 @@ module.exports = function (app, socket) {
     });
 
     app.post('/register', function (req, res) {
-        var fullName = req.body.fullName;
+        var fullName = req.body.fullname;
         var phone = req.body.phone;
         var address = req.body.address;
         var tourID = req.body.tourID;
@@ -36,7 +36,7 @@ module.exports = function (app, socket) {
 
         checkFlag(sql);
 
-        res.redirect('/notify-register');
+        res.render('notify-register');
     });
 
     app.post('/register/customer', function (req, res) {
@@ -48,7 +48,7 @@ module.exports = function (app, socket) {
         var numberAdult = req.body.numberAdult;
         var numberChild = req.body.numberChild;
         sql = "INSERT INTO `tours`.`register` (`fullName`, `phone`, `address`, `tourID`, `busID`, `numberAdult`, `numberChild`) VALUES ('" + fullName + "','" + phone + "','" + address + "','" + tourID + "','" + busID + "','" + numberAdult + "','" + numberChild + "')";
-
+        console.log(sql);
         checkFlag(sql);
 
         res.redirect('/show');
